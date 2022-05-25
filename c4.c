@@ -1,3 +1,6 @@
+// TEST-File: Überflüssige Variable
+
+
 #include <stdio.h>
 
 int main() {
