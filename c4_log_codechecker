@@ -1,0 +1,61 @@
+user@notebook:~/c4$ CodeChecker check -b make -o ./reportcc
+[INFO 2022-04-22 13:30] - Starting build...
+[INFO 2022-04-22 13:30] - Using CodeChecker ld-logger.
+gcc -o c4make c4.c
+[INFO 2022-04-22 13:30] - Build finished successfully.
+[INFO 2022-04-22 13:30] - Enabled checkers:
+clangsa: alpha.cplusplus.PlacementNew, core.CallAndMessage, core.DivideZero, core.DynamicTypePropagation, core.NonNullParamChecker, core.NullDereference, core.StackAddressEscape, core.UndefinedBinaryOperatorResult, core.VLASize, core.uninitialized.ArraySubscript, core.uninitialized.Assign, core.uninitialized.Branch, core.uninitialized.CapturedBlockVariable, core.uninitialized.UndefReturn, cplusplus.InnerPointer, cplusplus.Move, cplusplus.NewDelete, cplusplus.NewDeleteLeaks, cplusplus.PureVirtualCall, deadcode.DeadStores, nullability.NullPassedToNonnull, nullability.NullReturnedFromNonnull, optin.cplusplus.UninitializedObject, optin.cplusplus.VirtualCall, optin.portability.UnixAPI, security.FloatLoopCounter, security.insecureAPI.UncheckedReturn, security.insecureAPI.getpw, security.insecureAPI.gets, security.insecureAPI.mkstemp, security.insecureAPI.mktemp, security.insecureAPI.rand, security.insecureAPI.vfork, unix.API, unix.Malloc, unix.MallocSizeof, unix.MismatchedDeallocator, unix.Vfork, unix.cstring.BadSizeArg, unix.cstring.NullArg, valist.CopyToSelf, valist.Uninitialized, valist.Unterminated
+clang-tidy: bugprone-assert-side-effect, bugprone-bool-pointer-implicit-conversion, bugprone-copy-constructor-init, bugprone-dangling-handle, bugprone-dynamic-static-initializers, bugprone-fold-init-type, bugprone-forward-declaration-namespace, bugprone-forwarding-reference-overload, bugprone-inaccurate-erase, bugprone-incorrect-roundings, bugprone-infinite-loop, bugprone-integer-division, bugprone-lambda-function-name, bugprone-macro-repeated-side-effects, bugprone-misplaced-operator-in-strlen-in-alloc, bugprone-misplaced-widening-cast, bugprone-move-forwarding-reference, bugprone-not-null-terminated-result, bugprone-signed-char-misuse, bugprone-sizeof-container, bugprone-sizeof-expression, bugprone-string-constructor, bugprone-string-literal-with-embedded-nul, bugprone-suspicious-enum-usage, bugprone-suspicious-memset-usage, bugprone-suspicious-missing-comma, bugprone-suspicious-semicolon, bugprone-swapped-arguments, bugprone-terminating-continue, bugprone-throw-keyword-missing, bugprone-too-small-loop-variable, bugprone-undefined-memory-manipulation, bugprone-undelegated-constructor, bugprone-unused-raii, bugprone-unused-return-value, bugprone-use-after-move, bugprone-virtual-near-miss, cert-dcl54-cpp, cert-dcl58-cpp, cert-dcl59-cpp, cert-err09-cpp, cert-fio38-c, cert-mem57-cpp, cert-oop11-cpp, cert-oop58-cpp, cert-pos44-c, cppcoreguidelines-special-member-functions, google-build-namespaces, google-global-names-in-headers, misc-definitions-in-headers, misc-misplaced-const, misc-redundant-expression, misc-unconventional-assign-operator, misc-uniqueptr-reset-release, performance-inefficient-algorithm, performance-move-const-arg, performance-move-constructor-init, performance-no-automatic-move, performance-noexcept-move-constructor, performance-trivially-destructible
+[INFO 2022-04-22 13:30] - Starting static analysis ...
+[INFO 2022-04-22 13:30] - [1/2] clang-tidy analyzed c4.c successfully.
+[INFO 2022-04-22 13:30] - [2/2] clangsa analyzed c4.c successfully.
+[INFO 2022-04-22 13:30] - ----==== Summary ====----
+[INFO 2022-04-22 13:30] - Successfully analyzed
+[INFO 2022-04-22 13:30] -   clangsa: 1
+[INFO 2022-04-22 13:30] -   clang-tidy: 1
+[INFO 2022-04-22 13:30] - Total analyzed compilation commands: 1
+[INFO 2022-04-22 13:30] - ----=================----
+[INFO 2022-04-22 13:30] - Analysis finished.
+[INFO 2022-04-22 13:30] - To view results in the terminal use the "CodeChecker parse" command.
+[INFO 2022-04-22 13:30] - To store results use the "CodeChecker store" command.
+[INFO 2022-04-22 13:30] - See --help and the user guide for further options about parsing and storing the reports.
+[INFO 2022-04-22 13:30] - ----=================----
+[INFO 2022-04-22 13:30] - Analysis length: 0.052461862564086914 sec.
+[MEDIUM] /home/user/c4/c4.c:4:8: unused variable 'i' [clang-diagnostic-unused-variable]
+   int i = 3012;
+       ^
+
+Found 1 defect(s) in c4.c
+
+
+----==== Severity Statistics ====----
+----------------------------
+Severity | Number of reports
+----------------------------
+MEDIUM   |                 1
+----------------------------
+----=================----
+
+----==== Checker Statistics ====----
+---------------------------------------------------------------
+Checker name                     | Severity | Number of reports
+---------------------------------------------------------------
+clang-diagnostic-unused-variable | MEDIUM   |                 1
+---------------------------------------------------------------
+----=================----
+
+----==== File Statistics ====----
+-----------------------------
+File name | Number of reports
+-----------------------------
+c4.c      |                 1
+-----------------------------
+----=================----
+
+----======== Summary ========----
+---------------------------------------------
+Number of processed analyzer result files | 2
+Number of analyzer reports                | 1
+---------------------------------------------
+----=================----
+

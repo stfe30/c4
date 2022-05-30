@@ -1,0 +1,8 @@
+user@notebook:~/c4$ cpplint c4.c
+c4.c:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+c4.c:4:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+c4.c:5:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+c4.c:6:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+Done processing c4.c
+Total errors found: 4
+
